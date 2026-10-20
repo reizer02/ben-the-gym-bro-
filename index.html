@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1769e8">
+<title>BEN THE GYM BRO</title>
+<style>
+:root{--blue:#1769e8;--blue2:#0e4fbd;--pale:#edf4ff;--ink:#13233d;--muted:#71809a;--line:#e2e9f3;--bg:#f6f8fc;--white:#fff;--green:#15865b;--shadow:0 10px 28px rgba(21,58,110,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);padding-bottom:92px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8bb6ff;outline-offset:2px}
+.app{max-width:760px;margin:0 auto;min-height:100vh}.top{padding:calc(16px + env(safe-area-inset-top)) 18px 20px;background:linear-gradient(135deg,#1769e8,#0e4fbd);color:#fff;border-radius:0 0 28px 28px}.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:14px;background:#fff;color:var(--blue);display:grid;place-items:center;font-size:22px;font-weight:900}.eyebrow{font-size:11px;letter-spacing:1.5px;opacity:.8;font-weight:800}.brand h1{font-size:18px;line-height:1.15;margin:3px 0 0;letter-spacing:.2px}.pill{border:1px solid #ffffff65;background:#ffffff1b;color:#fff;border-radius:999px;padding:7px 10px;font-size:11px;font-weight:800}.top h2{font-size:25px;line-height:1.14;margin:24px 0 7px;letter-spacing:-.6px}.top p{margin:0;color:#e5efff;font-size:13px;line-height:1.45}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:19px}.hero-stat{padding:11px 10px;border-radius:15px;background:#ffffff1c;border:1px solid #ffffff25}.hero-stat strong{display:block;font-size:17px}.hero-stat span{display:block;font-size:10px;color:#e2edff;margin-top:3px}
+main{padding:18px 14px 10px}.section{display:none}.section.active{display:block;animation:fade .2s ease}@keyframes fade{from{opacity:.4;transform:translateY(3px)}to{opacity:1;transform:none}}.section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:5px 3px 14px}.section-title h2{font-size:22px;margin:0;letter-spacing:-.4px}.section-title p{font-size:12px;color:var(--muted);margin:5px 0 0}.small-label{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:1px;text-transform:uppercase}.card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}.card h3{font-size:16px;margin:0 0 6px}.muted{color:var(--muted)}.tiny{font-size:11px;line-height:1.45}.btn{border:0;border-radius:13px;padding:12px 14px;font-weight:800;font-size:13px;background:var(--blue);color:#fff;box-shadow:0 5px 13px #1769e829}.btn:active{transform:scale(.99)}.btn.secondary{background:var(--pale);color:var(--blue);box-shadow:none}.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.danger{background:#fff0f0;color:#b93434;box-shadow:none}.btn.small{padding:9px 11px;font-size:12px}.btn.full{width:100%}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.grow{flex:1;min-width:0}.iconbox{width:43px;height:43px;flex-shrink:0;display:grid;place-items:center;border-radius:14px;background:var(--pale);font-size:21px}.tag{font-size:10px;padding:5px 8px;border-radius:99px;background:var(--pale);color:var(--blue);font-weight:800;white-space:nowrap}.routine-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.routine{padding:14px;border:1px solid var(--line);border-radius:17px;background:#fff}.routine .num{font-size:10px;color:var(--blue);font-weight:900;letter-spacing:1px}.routine h3{margin:7px 0 5px;font-size:14px}.routine p{margin:0;color:var(--muted);font-size:11px;line-height:1.4}.routine .routine-foot{margin-top:12px;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted)}
+.progressbar{height:7px;background:#e8eef7;border-radius:99px;overflow:hidden}.progressbar span{display:block;height:100%;background:linear-gradient(90deg,#1769e8,#56a0ff);border-radius:99px;transition:width .2s}.workout-head{background:linear-gradient(135deg,#eef5ff,#fff);border:1px solid #d9e7ff;border-radius:20px;padding:16px;margin-bottom:12px}.workout-head h3{font-size:19px;margin:6px 0}.workout-head p{font-size:12px;color:var(--muted);margin:0}.exercise{padding:14px;background:#fff;border:1px solid var(--line);border-radius:17px;margin-bottom:10px}.exercise.done{border-color:#a9dec9;background:#f5fcf8}.exercise-top{display:flex;align-items:flex-start;gap:10px}.check{width:25px;height:25px;accent-color:var(--blue);flex-shrink:0;margin-top:1px}.ex-name{font-weight:800;font-size:14px;line-height:1.3}.ex-meta{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.4}.ex-badge{margin-left:auto;font-size:10px;background:#f0f4fa;border-radius:8px;padding:5px 7px;color:#61718a;white-space:nowrap}.ex-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}.field label{display:block;font-size:10px;color:var(--muted);font-weight:700;margin-bottom:5px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 8px;background:#fbfcff;color:var(--ink);min-width:0;font-size:13px}.timer-card{background:#122847;color:#fff;border-radius:20px;padding:17px;margin-bottom:12px}.timer-card .muted{color:#b8c8df}.timer-display{font-size:34px;font-variant-numeric:tabular-nums;font-weight:850;letter-spacing:1px;margin:5px 0 12px}.timer-controls{display:flex;gap:8px;flex-wrap:wrap}.timer-controls .btn{flex:1;min-width:90px}.timer-card .btn.secondary{background:#e6efff;color:#1553b2}.tabs{position:fixed;z-index:20;bottom:0;left:0;right:0;max-width:760px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px calc(8px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(18px);border-top:1px solid var(--line)}.tab{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;color:#8190a7;font-size:10px;font-weight:750;padding:5px 1px}.tab .tabicon{font-size:20px;line-height:1.1}.tab.active{color:var(--blue)}.tab.active .tabicon{transform:translateY(-1px)}.mobility-item{display:flex;align-items:flex-start;gap:11px;padding:13px 0;border-bottom:1px solid var(--line)}.mobility-item:last-child{border-bottom:0}.mobility-item input{width:21px;height:21px;accent-color:var(--blue);margin:1px 0 0}.mobility-item strong{font-size:13px}.mobility-item p{margin:4px 0 0;font-size:11px;color:var(--muted);line-height:1.4}.daychip{display:inline-flex;background:var(--pale);color:var(--blue);font-size:11px;font-weight:800;padding:7px 10px;border-radius:99px}.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.metric{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px}.metric strong{font-size:23px;display:block}.metric span{font-size:11px;color:var(--muted)}.log-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:11px 0;border-bottom:1px solid var(--line);font-size:12px}.log-row:last-child{border-bottom:0}.empty{text-align:center;padding:25px 10px;color:var(--muted)}.empty div{font-size:30px;margin-bottom:7px}.notice{font-size:11px;line-height:1.5;padding:11px 12px;border-radius:12px;background:#fff8e9;color:#79521a;border:1px solid #f6e3b7;margin-bottom:12px}.settings-list{display:flex;flex-direction:column;gap:10px}.setting-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}.setting-row:last-child{border:0}.setting-row strong{font-size:13px}.setting-row span{font-size:11px;color:var(--muted)}.toast{position:fixed;z-index:30;bottom:92px;left:50%;transform:translateX(-50%);background:#122847;color:#fff;padding:11px 15px;border-radius:12px;font-size:12px;box-shadow:var(--shadow);display:none;max-width:90vw}.toast.show{display:block}.hidden{display:none!important}
+@media(min-width:600px){main{padding:24px}.top{padding-left:26px;padding-right:26px}.routine-grid{grid-template-columns:repeat(4,1fr)}.exercise{padding:17px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="toprow"><div class="brand"><div class="logo">BG</div><div><div class="eyebrow">TON COACH PERSONNEL</div><h1>BEN THE GYM BRO</h1></div></div><span class="pill">NIVEAU AVANCÉ</span></div>
+ <h2 id="greeting">On construit du muscle. 💪</h2>
+ <p>4 séances par semaine · Matériel maison · Progression suivie</p>
+ <div class="hero-stats"><div class="hero-stat"><strong>4 / sem.</strong><span>SÉANCES CIBLES</span></div><div class="hero-stat"><strong>55–60 min</strong><span>PAR SÉANCE</span></div><div class="hero-stat"><strong id="streakCount">0</strong><span>SÉANCES VALIDÉES</span></div></div>
+</header>
+<main>
+<section class="section active" id="home">
+ <div class="section-title"><div><div class="small-label">TABLEAU DE BORD</div><h2>Ta prochaine séance</h2><p id="todayDate"></p></div><span class="tag">PRISE DE MUSCLE</span></div>
+ <div class="card">
+  <div class="row"><div class="iconbox">🏋️</div><div class="grow"><div class="small-label">PROGRAMME 4 JOURS</div><h3 id="nextWorkoutTitle">Jour 1 — PUSH</h3><div class="tiny muted" id="nextWorkoutSub">Pectoraux · épaules · triceps</div></div></div>
+  <div style="height:14px"></div><div class="progressbar"><span id="homeProgress" style="width:0%"></span></div><div class="row between" style="margin:7px 0 14px"><span class="tiny muted" id="homeProgressText">0 exercice terminé</span><span class="tiny muted">Objectif : 4 / semaine</span></div>
+  <button class="btn full" onclick="startWorkout()">Lancer la séance + échauffement ↗</button>
+ </div>
+ <div class="section-title"><div><h2>Ton programme</h2><p>Choisis une séance pour consulter les exercices.</p></div></div>
+ <div class="routine-grid" id="homeRoutines"></div>
+ <div class="card" style="margin-top:12px"><div class="row between"><div><h3>Mobilité du jour</h3><p class="tiny muted" style="margin:0">Routine corps entier, renouvelée chaque jour.</p></div><span class="iconbox">🧘</span></div><div style="height:12px"></div><button class="btn secondary full" onclick="showTab('mobility')">Voir ma routine du jour</button></div>
+ <div class="notice">Astuce : vise une technique propre et garde généralement 1–2 répétitions en réserve sur la dernière série. Pour le développé couché, prévois des sécurités adaptées si tu t'entraînes seul.</div>
+</section>
+
+<section class="section" id="session">
+ <div class="section-title"><div><div class="small-label">ENTRAÎNEMENT</div><h2>Ta séance</h2><p>Échauffement et chronomètre liés à la séance.</p></div><span class="daychip" id="sessionDayChip">JOUR 1</span></div>
+ <div class="card">
+  <label class="tiny muted" for="workoutSelect">Choisir une séance</label>
+  <select id="workoutSelect" onchange="changeWorkout(Number(this.value))" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;margin-top:6px;background:#fff;color:var(--ink)">
+  <option value="0">Jour 1 — PUSH</option><option value="1">Jour 2 — PULL</option><option value="2">Jour 3 — LEGS</option><option value="3">Jour 4 — UPPER FOCUS</option>
+  </select>
+ </div>
+ <div class="workout-head"><div class="small-label" id="workoutFocus">PECTORAUX · ÉPAULES · TRICEPS</div><h3 id="workoutTitle">Jour 1 — PUSH</h3><p id="workoutDescription">Priorité développé couché, puis travail épaules et triceps.</p></div>
+ <div class="timer-card">
+  <div class="row between"><div><div class="small-label" style="color:#9cc4ff">CHRONOMÈTRE DE SÉANCE</div><div class="muted tiny" id="timerMode">Prêt à démarrer</div></div><span style="font-size:22px">⏱️</span></div>
+  <div class="timer-display" id="sessionClock">00:00</div>
+  <div class="timer-controls"><button class="btn secondary" id="mainTimerBtn" onclick="toggleSessionTimer()">Démarrer</button><button class="btn ghost" onclick="resetSessionTimer()">Réinitialiser</button></div>
+ </div>
+ <div class="card" id="warmupCard">
+  <div class="row between"><div><div class="small-label">ÉTAPE 1 · 5–7 MIN</div><h3>Échauffement dynamique</h3></div><span class="tag">Synchronisé</span></div>
+  <p class="tiny muted">Démarre le chronomètre ici ou depuis le bouton principal : les deux restent synchronisés.</p>
+  <div id="warmupList"></div>
+  <div style="height:12px"></div><div class="row between"><div><span class="tiny muted">Temps écoulé</span><div class="timer-display" style="color:var(--ink);font-size:25px;margin:3px 0" id="warmupClock">00:00</div></div><button class="btn secondary small" onclick="toggleSessionTimer()" id="warmupBtn">Démarrer séance</button></div>
+  <div class="notice" id="rampNote">Avant le développé couché : fais plusieurs séries de montée en charge, progressives et faciles, non comptées dans les 6 × 5.</div>
+ </div>
+ <div class="row between" style="margin:19px 3px 10px"><div><div class="small-label">ÉTAPE 2</div><h2 style="font-size:20px;margin:3px 0">Exercices</h2></div><span class="tag" id="exerciseCount">0 / 6</span></div>
+ <div class="progressbar" style="margin:0 2px 13px"><span id="sessionProgress" style="width:0%"></span></div>
+ <div id="exerciseList"></div>
+ <div class="card"><h3>Fin de séance</h3><p class="tiny muted">Valide la séance pour l'ajouter à ton historique local. Les performances saisies seront conservées sur cet appareil.</p><button class="btn full" onclick="finishWorkout()">Terminer et enregistrer la séance</button></div>
+</section>
+
+<section class="section" id="mobility">
+ <div class="section-title"><div><div class="small-label">RÉCUPÉRATION ACTIVE</div><h2>Mobilité du jour</h2><p id="mobilityDate"></p></div><span class="iconbox">🧘</span></div>
+ <div class="workout-head"><div class="small-label">ROUTINE QUOTIDIENNE</div><h3 id="mobilityTitle">Corps entier</h3><p>La sélection change automatiquement selon la date locale. Coche chaque mouvement à mesure que tu le termines.</p></div>
+ <div class="card"><div class="row between"><div><h3>Ta routine</h3><p class="tiny muted" style="margin:0" id="mobilityProgressText">0 mouvement terminé</p></div><span class="tag" id="mobilityDuration">8–10 min</span></div><div style="height:10px"></div><div class="progressbar"><span id="mobilityProgress" style="width:0%"></span></div><div id="mobilityList" style="margin-top:7px"></div></div>
+ <div class="card"><h3>Rouleau de massage</h3><p class="tiny muted">Optionnel : utilise-le doucement sur les muscles tendus pendant 30–60 secondes par zone. Évite les articulations et arrête si tu ressens une douleur vive, un engourdissement ou des fourmillements.</p></div>
+ <button class="btn secondary full" onclick="regenerateMobility()">Revoir la sélection du jour</button>
+</section>
+
+<section class="section" id="tracking">
+ <div class="section-title"><div><div class="small-label">TES DONNÉES</div><h2>Suivi de progression</h2><p>Enregistré localement sur cet appareil.</p></div><span class="iconbox">📈</span></div>
+ <div class="metric-grid"><div class="metric"><strong id="totalSessions">0</strong><span>Séances terminées</span></div><div class="metric"><strong id="weekSessions">0 / 4</strong><span>Cette semaine</span></div><div class="metric"><strong id="totalSets">0</strong><span>Séries cochées</span></div><div class="metric"><strong id="mobilityDays">0</strong><span>Routines mobilité complétées</span></div></div>
+ <div class="card" style="margin-top:12px"><div class="row between"><div><h3>Historique des séances</h3><p class="tiny muted" style="margin:0">Les dernières séances enregistrées.</p></div><button class="btn ghost small" onclick="exportData()">Exporter JSON</button></div><div id="historyList" style="margin-top:10px"></div></div>
+ <div class="card"><h3>Dernières performances</h3><p class="tiny muted">Charge et répétitions entrées dans les exercices.</p><div id="performanceList"></div></div>
+ <div class="card"><h3>Gestion des données</h3><p class="tiny muted">Les données restent dans le stockage local du navigateur. Elles ne sont pas envoyées à un serveur. Effacer les données du navigateur peut les supprimer.</p><button class="btn danger full" onclick="clearData()">Effacer toutes les données enregistrées</button></div>
+</section>
+
+<section class="section" id="settings">
+ <div class="section-title"><div><div class="small-label">CONFIGURATION</div><h2>Profil & matériel</h2><p>Les paramètres utilisés par ton programme.</p></div><span class="iconbox">⚙️</span></div>
+ <div class="card"><div class="settings-list">
+  <div class="setting-row"><div><strong>Niveau</strong><br><span>Avancé</span></div><span class="tag">ACTIF</span></div>
+  <div class="setting-row"><div><strong>Objectif</strong><br><span>Prise de muscle</span></div><span class="tag">ACTIF</span></div>
+  <div class="setting-row"><div><strong>Fréquence</strong><br><span>4 séances par semaine</span></div><span class="tag">ACTIF</span></div>
+  <div class="setting-row"><div><strong>Matériel disponible</strong><br><span>Banc, haltères, 100 kg de poids, poulie vis-à-vis, barre de traction, dips, élastique, rouleau de massage</span></div></div>
+  <div class="setting-row"><div><strong>Design</strong><br><span>Blanc & bleu</span></div><span class="tag">ACTIF</span></div>
+ </div></div>
+ <div class="card"><h3>Règles de progression</h3><ul class="tiny muted" style="padding-left:18px;line-height:1.8"><li>Tempo cible : 2-0-1-0 quand il est applicable.</li><li>Quand tu atteins le haut de la fourchette avec une bonne technique, augmente légèrement la charge si possible.</li><li>Garde environ 1–2 répétitions en réserve sur la dernière série.</li><li>Repos et séries sont indiqués pour chaque exercice.</li><li>Vacuum : 3 × 20–30 s quotidien, si confortable.</li></ul></div>
+</section>
+</main>
+<nav class="tabs" aria-label="Navigation principale">
+ <button class="tab active" data-tab="home" onclick="showTab('home')"><span class="tabicon">⌂</span>Accueil</button>
+ <button class="tab" data-tab="session" onclick="showTab('session')"><span class="tabicon">🏋️</span>Séance</button>
+ <button class="tab" data-tab="mobility" onclick="showTab('mobility')"><span class="tabicon">🧘</span>Mobilité</button>
+ <button class="tab" data-tab="tracking" onclick="showTab('tracking')"><span class="tabicon">↗</span>Suivi</button>
+ <button class="tab" data-tab="settings" onclick="showTab('settings')"><span class="tabicon">⚙</span>Profil</button>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+</div>
+<script>
+const workouts = [
+ {name:"Jour 1 — PUSH",short:"PUSH",focus:"PECTORAUX · ÉPAULES · TRICEPS",desc:"Priorité au développé couché, puis travail épaules et triceps.",warm:["Cercles d’épaules et rotations contrôlées — 60 s","Pompes faciles, amplitude confortable — 2 × 8","Mobilité thoracique et scapulaire — 60 s","Montée en température générale — 2 min"],ramp:"Avant le développé couché : fais plusieurs séries de montée en charge, progressives et faciles, non comptées dans les 6 × 5.",ex:[
+ ["Développé couché","6 × 5","120–180 s","Pectoraux · exercice prioritaire"],
+ ["Écarté poulie vis-à-vis","3 × 10–12","75 s","Contrôle l’étirement, sans douleur"],
+ ["Développé militaire haltères assis","4 × 8–10","90–120 s","Épaules"],
+ ["Élévations latérales haltères","4 × 12–15","60–75 s","Sans élan, contrôle la descente"],
+ ["Dips","3 × 8–12","90 s","Utilise l’élastique si nécessaire"],
+ ["Extension triceps poulie corde","3 × 10–12","60 s","Garde les coudes stables"]
+ ]},
+ {name:"Jour 2 — PULL",short:"PULL",focus:"DOS · ARRIÈRE D’ÉPAULES · BICEPS",desc:"Tractions et tirages pour développer un dos large et épais.",warm:["Suspensions actives ou mobilisation des épaules — 60 s","Rotations thoraciques — 60 s","Tirages légers à la poulie — 2 × 12","Rétractions des omoplates et marche dynamique — 2 min"],ramp:"Fais 1–3 séries d’approche légères sur le premier mouvement si nécessaire.",ex:[
+ ["Tractions prise large ou neutre","4 × max propre","120 s","Ajoute une charge si plus de 10 répétitions propres"],
+ ["Rowing haltère unilatéral","4 × 8–10","90 s","Par côté"],
+ ["Tirage horizontal poulie prise large","3 × 10–12","75–90 s","Buste stable"],
+ ["Face pulls à la corde","4 × 12–15","60 s","Tire vers le visage, coudes ouverts"],
+ ["Curl biceps haltères","3 × 10–12","60–75 s","Sans balancement"],
+ ["Curl marteau haltères","3 × 10–12","60 s","Poignets neutres"]
+ ]},
+ {name:"Jour 3 — LEGS",short:"LEGS",focus:"QUADRICEPS · ISCHIOS · FESSIERS · MOLLETS",desc:"Jambes complètes avec haltères et poids disponibles.",warm:["Squats au poids du corps — 2 × 10","Fentes arrière sans charge — 8 par jambe","Charnières de hanches — 12 répétitions","Mobilité chevilles et hanches — 2 min"],ramp:"Ajoute des séries d’approche légères avant les mouvements chargés.",ex:[
+ ["Squat goblet / squat haltères","4 × 8–10","120 s","Amplitude contrôlée et stable"],
+ ["Fentes arrière haltères","4 × 10 / jambe","90 s","Chaque jambe"],
+ ["Soulevé de terre roumain haltères","3 × 8–10","90–120 s","Charnière de hanches, dos neutre"],
+ ["Fentes bulgares","3 × 10–12 / jambe","90 s","Alternative maison au hack squat/presse"],
+ ["Mollets debout","4 × 12–15","45–60 s","Pause en haut et étirement contrôlé"],
+ ["Abdos + vacuum","3–4 séries","60 s","Crunch 15 + planche 40 s + vacuum 20–30 s"]
+ ]},
+ {name:"Jour 4 — UPPER FOCUS",short:"UPPER",focus:"ÉPAULES · DOS · BRAS",desc:"Accent sur la largeur des épaules et du dos, puis bras.",warm:["Cercles d’épaules et mobilité thoracique — 60 s","Pompes contrôlées — 2 × 8","Tirages légers à la poulie — 2 × 12","Mobilité poignets et coudes — 60 s"],ramp:"Fais quelques répétitions faciles avant les séries de travail.",ex:[
+ ["Arnold press ou développé militaire haltères","4 × 8–10","90–120 s","Épaules"],
+ ["Élévations latérales haltères","4 × 12–15","60–75 s","Drop-set possible sur la dernière série si la technique reste propre"],
+ ["Tractions serrées / chin-ups","3 × 8–12","90–120 s","Aide avec l’élastique si besoin"],
+ ["Rowing poulie prise neutre","3 × 10–12","75 s","Évite l’élan"],
+ ["Curl biceps poulie / haltères","3 × 10–12","60 s","Contrôle de la descente"],
+ ["Extension triceps overhead haltère / poulie","3 × 10–12","60–75 s","Amplitude confortable"],
+ ["Face pulls ou oiseau haltères","3 × 15","45–60 s","Arrière d’épaules"]
+ ]}
+];
+const mobilityPool=[
+ ["Cercles d’épaules contrôlés","8–10 dans chaque sens","Épaules et omoplates"],
+ ["Rotation thoracique au sol","6–8 par côté","Haut du dos"],
+ ["Ouverture pectorale douce","30 s par côté","Pectoraux et épaules"],
+ ["Cat-cow","8–10 répétitions","Colonne vertébrale"],
+ ["Fente basse avec mobilité de hanche","30 s par côté","Fléchisseurs de hanche"],
+ ["90/90 de hanches","6 par côté","Rotation des hanches"],
+ ["Étirement dynamique des ischio-jambiers","8 par côté","Arrière des cuisses"],
+ ["Mobilité de cheville genou-au-mur","10 par côté","Chevilles"],
+ ["Squat profond assisté","30–45 s","Hanches et chevilles"],
+ ["Rotation externe légère avec élastique","12 répétitions","Coiffe des rotateurs"],
+ ["Glissés au mur","8–10 répétitions","Épaules et haut du dos"],
+ ["Poignets : flexion/extension douce","30 s","Poignets"],
+ ["Étirement du grand dorsal","30 s par côté","Dos et épaules"],
+ ["Pont fessier au poids du corps","12 répétitions","Hanches et fessiers"],
+ ["Fente latérale contrôlée","6 par côté","Adducteurs et hanches"],
+ ["Respiration diaphragmatique","60 s","Retour au calme"]
+];
+const storeKey="bengymbro_v1";
+let data=loadData(), currentWorkout=0, sessionStartedAt=null, sessionElapsed=0, sessionInterval=null, sessionRunning=false, warmupChecks={}, currentMobility=[], mobilityChecks={}, sessionStartDate=null;
+function loadData(){try{return JSON.parse(localStorage.getItem(storeKey))||{history:[],performances:{},mobilityDone:{},exerciseState:{}}}catch(e){return{history:[],performances:{},mobilityDone:{},exerciseState:{}}}}
+function saveData(){try{localStorage.setItem(storeKey,JSON.stringify(data))}catch(e){toast("Stockage local indisponible dans ce navigateur.")}}
+function todayKey(d=new Date()){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function fmtDate(d=new Date()){return d.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"})}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2400)}
+function showTab(id){document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===id));document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));if(id==="tracking")renderTracking();if(id==="mobility")renderMobility();window.scrollTo({top:0,behavior:"smooth"})}
+function renderHome(){document.getElementById("todayDate").textContent=fmtDate();document.getElementById("greeting").textContent=(new Date().getHours()<12?"On construit du muscle. 💪":new Date().getHours()<18?"Prêt à faire une bonne séance ?":"Un peu de régularité, de gros progrès. 💪");const done=data.history.length;document.getElementById("streakCount").textContent=done;const idx=nextWorkoutIndex();document.getElementById("nextWorkoutTitle").textContent=workouts[idx].name;document.getElementById("nextWorkoutSub").textContent=workouts[idx].focus.toLowerCase().replaceAll(" · "," · ");const st=data.exerciseState[idx]||{};const n=Object.values(st).filter(v=>v.done).length;document.getElementById("homeProgress").style.width=(n/workouts[idx].ex.length*100)+"%";document.getElementById("homeProgressText").textContent=n+" / "+workouts[idx].ex.length+" exercices cochés";document.getElementById("homeRoutines").innerHTML=workouts.map((w,i)=>`<button class="routine" style="text-align:left" onclick="changeWorkout(${i});showTab('session')"><div class="num">JOUR ${i+1}</div><h3>${w.short}</h3><p>${w.focus.toLowerCase()}</p><div class="routine-foot"><span>${w.ex.length} exercices</span><span>↗</span></div></button>`).join("");}
+function nextWorkoutIndex(){if(!data.history.length)return 0;const last=data.history[data.history.length-1].workoutIndex;return (last+1)%workouts.length}
+function changeWorkout(i){currentWorkout=i;document.getElementById("workoutSelect").value=String(i);renderWorkout();showTab("session")}
+function renderWorkout(){const w=workouts[currentWorkout];document.getElementById("sessionDayChip").textContent="JOUR "+(currentWorkout+1);document.getElementById("workoutFocus").textContent=w.focus;document.getElementById("workoutTitle").textContent=w.name;document.getElementById("workoutDescription").textContent=w.desc;document.getElementById("rampNote").textContent=w.ramp;document.getElementById("warmupList").innerHTML=w.warm.map((s,i)=>`<div class="mobility-item"><span class="tag">${i+1}</span><div><strong>${escapeHtml(s.split(" — ")[0])}</strong><p>${escapeHtml(s.includes(" — ")?s.split(" — ").slice(1).join(" — "):"Effectue le mouvement sans douleur.")}</p></div></div>`).join("");const st=data.exerciseState[currentWorkout]||{};document.getElementById("exerciseList").innerHTML=w.ex.map((e,i)=>{const v=st[i]||{};return `<div class="exercise ${v.done?"done":""}" id="exercise-${i}"><div class="exercise-top"><input class="check" type="checkbox" aria-label="Exercice terminé" ${v.done?"checked":""} onchange="toggleExercise(${i},this.checked)"><div class="grow"><div class="ex-name">${i+1}. ${escapeHtml(e[0])}</div><div class="ex-meta">${escapeHtml(e[3])}</div></div><span class="ex-badge">${escapeHtml(e[2])}</span></div><div class="ex-fields"><div class="field"><label for="weight-${i}">Charge (kg)</label><input id="weight-${i}" inputmode="decimal" type="number" min="0" step="0.5" placeholder="—" value="${v.weight??(data.performances[e[0]]?.weight??"")}" onchange="saveExerciseField(${i},'weight',this.value)"></div><div class="field"><label for="reps-${i}">Répétitions</label><input id="reps-${i}" inputmode="numeric" type="text" placeholder="${escapeHtml(e[1])}" value="${escapeHtml(v.reps??"")}" onchange="saveExerciseField(${i},'reps',this.value)"></div><div class="field"><label for="sets-${i}">Séries faites</label><input id="sets-${i}" inputmode="numeric" type="number" min="0" max="20" step="1" placeholder="${escapeHtml(e[1].split(" × ")[0])}" value="${escapeHtml(v.sets??"")}" onchange="saveExerciseField(${i},'sets',this.value)"></div></div><div class="row between" style="margin-top:10px"><span class="tiny muted">Repos conseillé : ${escapeHtml(e[2])}</span><button class="btn ghost small" onclick="startRest('${escapeHtml(e[2]).replaceAll("'","")}')">Repos ⏱</button></div></div>`}).join("");updateExerciseProgress();document.getElementById("warmupBtn").textContent=sessionRunning?"Mettre en pause":"Démarrer séance"}
+function toggleExercise(i,done){if(!data.exerciseState[currentWorkout])data.exerciseState[currentWorkout]={};data.exerciseState[currentWorkout][i]=data.exerciseState[currentWorkout][i]||{};data.exerciseState[currentWorkout][i].done=done;saveData();renderWorkout();renderHome()}
+function saveExerciseField(i,key,val){if(!data.exerciseState[currentWorkout])data.exerciseState[currentWorkout]={};const obj=data.exerciseState[currentWorkout][i]||(data.exerciseState[currentWorkout][i]={});obj[key]=val;const ex=workouts[currentWorkout].ex[i];if(key==="weight"||key==="reps"){data.performances[ex[0]]=data.performances[ex[0]]||{};data.performances[ex[0]][key]=val;data.performances[ex[0]].date=todayKey()}saveData();renderTracking()}
+function updateExerciseProgress(){const st=data.exerciseState[currentWorkout]||{};const n=Object.values(st).filter(v=>v.done).length,total=workouts[currentWorkout].ex.length;document.getElementById("exerciseCount").textContent=n+" / "+total;document.getElementById("sessionProgress").style.width=(n/total*100)+"%"}
+function startWorkout(){showTab("session");changeWorkout(nextWorkoutIndex());if(!sessionRunning)toggleSessionTimer();document.getElementById("warmupCard").scrollIntoView({behavior:"smooth",block:"start"})}
+function toggleSessionTimer(){if(sessionRunning){sessionElapsed+=Math.floor((Date.now()-sessionStartedAt)/1000);sessionStartedAt=null;sessionRunning=false;clearInterval(sessionInterval);sessionInterval=null}else{sessionStartedAt=Date.now();sessionRunning=true;sessionStartDate=sessionStartDate||new Date().toISOString();sessionInterval=setInterval(updateClock,500)}updateClock();document.getElementById("mainTimerBtn").textContent=sessionRunning?"Mettre en pause":"Reprendre";document.getElementById("warmupBtn").textContent=sessionRunning?"Mettre en pause":"Reprendre";document.getElementById("timerMode").textContent=sessionRunning?"Séance en cours — échauffement inclus":"Chronomètre en pause"}
+function updateClock(){let elapsed=sessionElapsed+(sessionRunning?Math.floor((Date.now()-sessionStartedAt)/1000):0);const s=elapsed%60,m=Math.floor(elapsed/60);document.getElementById("sessionClock").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");document.getElementById("warmupClock").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}
+function resetSessionTimer(){if(sessionInterval)clearInterval(sessionInterval);sessionInterval=null;sessionRunning=false;sessionElapsed=0;sessionStartedAt=null;sessionStartDate=null;document.getElementById("mainTimerBtn").textContent="Démarrer";document.getElementById("warmupBtn").textContent="Démarrer séance";document.getElementById("timerMode").textContent="Prêt à démarrer";updateClock()}
+let restInterval=null,restRemaining=0;
+function startRest(raw){const match=String(raw).match(/(\d+)\s*s/);restRemaining=match?Number(match[1]):90;if(String(raw).includes("–")){const nums=String(raw).match(/\d+/g);if(nums)restRemaining=Number(nums[0])}if(restInterval)clearInterval(restInterval);const old=document.getElementById("restToast");if(old)old.remove();const el=document.createElement("div");el.id="restToast";el.className="timer-card";el.style.position="fixed";el.style.left="14px";el.style.right="14px";el.style.bottom="85px";el.style.zIndex="25";el.innerHTML=`<div class="row between"><div><div class="small-label" style="color:#9cc4ff">CHRONO REPOS</div><div class="timer-display" id="restClock" style="margin-bottom:0">00:${String(restRemaining).padStart(2,"0")}</div></div><button class="btn ghost small" onclick="stopRest()">Fermer</button></div>`;document.body.appendChild(el);tickRest();restInterval=setInterval(tickRest,1000)}
+function tickRest(){const el=document.getElementById("restClock");if(!el)return;el.textContent=String(Math.floor(restRemaining/60)).padStart(2,"0")+":"+String(restRemaining%60).padStart(2,"0");if(restRemaining<=0){clearInterval(restInterval);restInterval=null;el.textContent="00:00";if(navigator.vibrate)navigator.vibrate([150,80,150]);toast("Temps de repos terminé !");return}restRemaining--}
+function stopRest(){if(restInterval)clearInterval(restInterval);restInterval=null;const el=document.getElementById("restToast");if(el)el.remove()}
+function finishWorkout(){const st=data.exerciseState[currentWorkout]||{};const completed=Object.values(st).filter(v=>v.done).length;if(!completed&&!confirm("Aucun exercice n’est coché. Enregistrer quand même cette séance ?"))return;const date=todayKey();data.history.push({date,workoutIndex:currentWorkout,name:workouts[currentWorkout].name,completed,total:workouts[currentWorkout].ex.length,seconds:sessionElapsed+(sessionRunning?Math.floor((Date.now()-sessionStartedAt)/1000):0)});saveData();resetSessionTimer();toast("Séance enregistrée dans ton historique.");renderHome();renderTracking();showTab("tracking")}
+function getDailyMobility(){const key=todayKey();let seed=Number(key.replaceAll("-",""));const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};const arr=[...mobilityPool];for(let i=arr.length-1;i>0;i--){const j=Math.floor(rand()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr.slice(0,8)}
+function renderMobility(){const key=todayKey();currentMobility=getDailyMobility();mobilityChecks=data.mobilityDone[key]||{};document.getElementById("mobilityDate").textContent=fmtDate();document.getElementById("mobilityTitle").textContent="Corps entier · "+currentMobility.length+" mouvements";document.getElementById("mobilityList").innerHTML=currentMobility.map((m,i)=>`<div class="mobility-item"><input type="checkbox" ${mobilityChecks[i]?"checked":""} aria-label="Mouvement terminé" onchange="toggleMobility(${i},this.checked)"><div><strong>${escapeHtml(m[0])}</strong><p>${escapeHtml(m[1])} · ${escapeHtml(m[2])}</p></div></div>`).join("");updateMobilityProgress()}
+function regenerateMobility(){renderMobility();toast("La sélection du jour est stable : elle change automatiquement demain.")}
+function toggleMobility(i,v){const key=todayKey();if(!data.mobilityDone[key])data.mobilityDone[key]={};data.mobilityDone[key][i]=v;saveData();renderMobility();renderTracking()}
+function updateMobilityProgress(){const n=Object.values(mobilityChecks).filter(Boolean).length,total=currentMobility.length||8;document.getElementById("mobilityProgressText").textContent=n+" / "+total+" mouvements terminés";document.getElementById("mobilityProgress").style.width=n/total*100+"%";if(n===total){data.mobilityDone[todayKey()]={...mobilityChecks,completed:true};saveData()}}
+function startOfWeek(d=new Date()){const x=new Date(d);const day=(x.getDay()+6)%7;x.setDate(x.getDate()-day);x.setHours(0,0,0,0);return x}
+function renderTracking(){document.getElementById("totalSessions").textContent=data.history.length;const start=startOfWeek();const week=data.history.filter(h=>new Date(h.date+"T12:00:00")>=start).length;document.getElementById("weekSessions").textContent=Math.min(week,4)+" / 4";let sets=0;Object.values(data.exerciseState).forEach(o=>Object.values(o).forEach(v=>{if(v.done)sets+=Number(v.sets||1)}));document.getElementById("totalSets").textContent=sets;document.getElementById("mobilityDays").textContent=Object.values(data.mobilityDone).filter(o=>o.completed||Object.values(o).filter(Boolean).length>=8).length;const history=document.getElementById("historyList");if(!data.history.length)history.innerHTML='<div class="empty"><div>📅</div>Pas encore de séance enregistrée.<br>Termine ta première séance pour la retrouver ici.</div>';else history.innerHTML=[...data.history].reverse().slice(0,12).map(h=>`<div class="log-row"><div><strong>${escapeHtml(h.name)}</strong><div class="tiny muted">${escapeHtml(h.date)} · ${h.completed}/${h.total} exercices cochés</div></div><span class="tag">${Math.floor((h.seconds||0)/60)} min</span></div>`).join("");const perf=document.getElementById("performanceList");const entries=Object.entries(data.performances).filter(([k,v])=>v.weight!==undefined||v.reps!==undefined).slice(-10).reverse();perf.innerHTML=entries.length?entries.map(([name,v])=>`<div class="log-row"><div><strong>${escapeHtml(name)}</strong><div class="tiny muted">Mis à jour : ${escapeHtml(v.date||"—")}</div></div><span>${v.weight?escapeHtml(v.weight)+" kg":""}${v.weight&&v.reps?" · ":""}${v.reps?escapeHtml(v.reps)+" reps":""}</span></div>`).join(""):'<div class="empty"><div>📊</div>Renseigne tes charges et répétitions pendant une séance.</div>'}
+function exportData(){const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="ben-the-gym-bro-donnees.json";a.click();URL.revokeObjectURL(url);toast("Export préparé.")}
+function clearData(){if(!confirm("Effacer toutes les séances, performances et données de mobilité de cet appareil ?"))return;data={history:[],performances:{},mobilityDone:{},exerciseState:{}};saveData();renderHome();renderWorkout();renderMobility();renderTracking();toast("Données locales effacées.")}
+document.getElementById("todayDate").textContent=fmtDate();renderHome();renderWorkout();renderMobility();renderTracking();
+</script>
+</body>
+</html>
